@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glam On Hire - Dress Rentals & Beauty Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 2rem 80px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 2rem;
+            background: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #667eea;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Dress Rentals Section */
+        .dress-rentals {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .dress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .dress-item {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .dress-item:hover {
+            transform: scale(1.05);
+        }
+
+        .dress-item h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #c94b4b;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 2rem;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 2rem;
+            background: #667eea;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 2rem;
+            transition: transform 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .instagram-icon {
+            color: #E1306C;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            border-radius: 12px;
+            padding: 8px;
+        }
+
+        .whatsapp-icon {
+            color: white;
+            background: #25D366;
+            border-radius: 12px;
+            padding: 8px;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Instagram Section */
+        .instagram-section {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .instagram-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            min-width: 150px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Portfolio */
+        .portfolio {
+            padding: 80px 2rem;
+            background: #f9f9f9;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-placeholder {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portfolio-placeholder span {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-placeholder p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #c94b4b;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stars {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .client-name {
+            font-style: italic;
+            font-weight: bold;
+            opacity: 0.9;
+        }
+
+        /* Booking Section */
+        .booking-section {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-input {
+            padding: 1rem;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        select.form-input {
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">✨ Glam On Hire</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#dresses">Dresses</a></li>
+                <li><a href="#beauty">Beauty</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#booking">Book</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Glam On Hire</h1>
+        <p>Stunning Dress Rentals & Professional Beauty Services</p>
+        <p>🇰🇪 NextGEN MALL, Mombasa Road, Nairobi</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/254701170443" class="btn btn-primary">📱 WhatsApp Us</a>
+            <a href="tel:0701170443" class="btn btn-secondary">📞 Call Now</a>
+        </div>
+    </section>
+
+    <section id="dresses" class="dress-rentals">
+        <div class="container">
+            <h2>Dress Rentals</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Perfect gowns for your special moments</p>
+            <div class="dress-grid">
+                <div class="dress-item">
+                    <div class="service-icon">👰</div>
+                    <h3>Wedding Dresses</h3>
+                    <p>Elegant bridal gowns to make your big day unforgettable</p>
+                </div>
+                <div class="dress-item">
+                    <div class="service-icon">🎂</div>
+                    <h3>Birthday Shoot Dresses</h3>
+                    <p>Gorgeous dresses perfect for birthday photoshoots</p>
+                </div>
+                <div class="dress-item">
+                    <div class="service-icon">🤰</div>
+                    <h3>Baby Bump Dresses</h3>
+                    <p>Beautiful maternity gowns for your pregnancy photos</p>
+                </div>
+                <div class="dress-item">
+                    <div class="service-icon">✨</div>
+                    <h3>Dinner Dresses</h3>
+                    <p>Stunning evening gowns for special occasions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beauty" class="services">
+        <div class="container">
+            <h2>Beauty Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">💄</div>
+                    <h3>Event Makeup</h3>
+                    <p>Glam looks for parties, weddings & photoshoots</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💇</div>
+                    <h3>Hair Styling</h3>
+                    <p>Elegant & trendy hair looks for any occasion</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👰</div>
+                    <h3>Bridal Glam</h3>
+                    <p>Customized makeup + hair for brides</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👯</div>
+                    <h3>Group Bookings</h3>
+                    <p>Bridal party & group beauty services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="instagram" class="instagram-section">
+        <div class="container">
+            <h2>Follow Our Journey</h2>
+            <div class="instagram-stats">
+                <div class="stat-box">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Followers</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Posts</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+            </div>
+            <a href="https://www.instagram.com/glam_on_hire" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">Follow @glam_on_hire on Instagram 📸</a>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Our Portfolio</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">See our stunning transformations</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-placeholder">
+                        <span>📸</span>
+                        <p>Bridal Glam</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-placeholder">
+                        <span>📸</span>
+                        <p>Birthday Shoot</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-placeholder">
+                        <span>📸</span>
+                        <p>Maternity Glow</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-placeholder">
+                        <span>📸</span>
+                        <p>Evening Glam</p>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; font-style: italic; color: #666;">Upload your best before/after photos and dress rental shots to showcase here!</p>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 style="color: white;">What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"The makeup was flawless and the dress fit perfectly! Made my wedding day magical."</p>
+                    <p class="client-name">- Sarah M.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Amazing service! The team made me feel like a queen at my birthday photoshoot."</p>
+                    <p class="client-name">- Grace K.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Best maternity dress rental in Nairobi! Beautiful gowns and professional styling."</p>
+                    <p class="client-name">- Mercy W.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; font-style: italic;">Add your real client reviews here!</p>
+        </div>
+    </section>
+
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <h2>Book Your Glam Experience</h2>
+            <div class="booking-form">
+                <input type="text" placeholder="Your Name" class="form-input">
+                <input type="tel" placeholder="Phone Number" class="form-input">
+                <input type="email" placeholder="Email Address" class="form-input">
+                <select class="form-input">
+                    <option>Select Service</option>
+                    <option>Wedding Dress Rental</option>
+                    <option>Birthday Shoot Dress</option>
+                    <option>Baby Bump Dress</option>
+                    <option>Dinner Dress</option>
+                    <option>Bridal Makeup & Hair</option>
+                    <option>Event Makeup</option>
+                    <option>Hair Styling</option>
+                    <option>Full Package (Dress + Beauty)</option>
+                </select>
+                <input type="date" class="form-input" placeholder="Event Date">
+                <textarea placeholder="Additional Details" class="form-input" rows="4"></textarea>
+                <button class="btn btn-primary" onclick="submitBooking()">Submit Booking Request 💜</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2 style="color: #c94b4b;">About Us</h2>
+            <p>Welcome to Glam On Hire - your one-stop destination for stunning dress rentals and professional beauty services in Kenya!</p>
+            <p>We specialize in making your special moments unforgettable with our exquisite collection of rental gowns and expert makeup & hair services.</p>
+            <p>Whether you're celebrating a wedding, birthday, maternity shoot, or special dinner, we've got you covered from head to toe!</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📞 <a href="tel:0701170443">0701 170 443</a>
+                </div>
+                <div class="contact-item">
+                    📍 NextGEN MALL, Mombasa Road, Nairobi
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/glam_on_hire" target="_blank" title="Instagram" class="instagram-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="https://wa.me/254701170443" target="_blank" title="WhatsApp" class="whatsapp-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                </a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 1.2rem;">Book your glam experience today! ✨</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Glam On Hire. All rights reserved. | Based in Kenya 🇰🇪</p>
+    </footer>
+
+    <script>
+        function submitBooking() {
+            const name = document.querySelectorAll('.form-input')[0].value;
+            const phone = document.querySelectorAll('.form-input')[1].value;
+            const service = document.querySelectorAll('.form-input')[3].value;
+            
+            if (!name || !phone) {
+                alert('Please fill in your name and phone number!');
+                return;
+            }
+            
+            const message = `Hi! I'd like to book: ${service}. Name: ${name}, Phone: ${phone}`;
+            const whatsappUrl = `https://wa.me/254701170443?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
