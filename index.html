@@ -19,8 +19,8 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: white;
+            color: #333;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
@@ -42,6 +42,41 @@
             font-size: 1.8rem;
             font-weight: bold;
             letter-spacing: 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo-main {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .logo-glam {
+            color: #C9A961;
+            font-size: 1.8rem;
+        }
+
+        .logo-on {
+            color: #C9A961;
+            font-size: 1.8rem;
+        }
+
+        .logo-hire {
+            color: #000;
+            font-size: 1.8rem;
+            border-top: 2px solid #000;
+            border-bottom: 2px solid #000;
+            padding: 0 0.3rem;
+        }
+
+        .logo-tagline {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #666;
+            font-weight: normal;
+            margin-top: -0.3rem;
         }
 
         .nav-links {
@@ -51,18 +86,19 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #333;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: color 0.3s;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
+            color: #C9A961;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #C9A961 0%, #8B7355 100%);
             color: white;
             padding: 120px 2rem 80px;
             text-align: center;
@@ -132,7 +168,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #667eea;
+            color: #C9A961;
         }
 
         .service-grid {
@@ -160,7 +196,7 @@
         }
 
         .service-card h3 {
-            color: #764ba2;
+            color: #C9A961;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
@@ -185,10 +221,18 @@
             text-align: center;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
         }
 
         .dress-item:hover {
             transform: scale(1.05);
+        }
+
+        .dress-item h3, .dress-item p {
+            color: #c94b4b;
         }
 
         .dress-item h3 {
@@ -218,7 +262,7 @@
         /* Contact Section */
         .contact {
             padding: 80px 2rem;
-            background: #667eea;
+            background: #000;
             color: white;
             text-align: center;
         }
@@ -294,7 +338,7 @@
         .stat-box {
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #C9A961 0%, #8B7355 100%);
             color: white;
             border-radius: 15px;
             min-width: 150px;
@@ -360,7 +404,7 @@
         /* Testimonials */
         .testimonials {
             padding: 80px 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #C9A961 0%, #8B7355 100%);
             color: white;
         }
 
@@ -420,7 +464,7 @@
 
         .form-input:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #C9A961;
         }
 
         select.form-input {
@@ -454,7 +498,14 @@
 <body>
     <header>
         <nav>
-            <div class="logo">✨ Glam On Hire</div>
+            <div class="logo">
+                <div class="logo-main">
+                    <span class="logo-glam">GLAM</span>
+                    <span class="logo-on">ON</span>
+                    <span class="logo-hire">HIRE</span>
+                </div>
+                <div class="logo-tagline">Flaunt Your Flair</div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#dresses">Dresses</a></li>
@@ -468,11 +519,11 @@
 
     <section id="home" class="hero">
         <h1>Glam On Hire</h1>
-        <p>Stunning Dress Rentals & Professional Beauty Services</p>
+        <p>Flaunt Your Flair with Stunning Dresses & Professional Beauty Services</p>
         <p>🇰🇪 NextGEN MALL, Mombasa Road, Nairobi</p>
         <div class="cta-buttons">
-            <a href="https://wa.me/254701170443" class="btn btn-primary">📱 WhatsApp Us</a>
-            <a href="tel:0701170443" class="btn btn-secondary">📞 Call Now</a>
+            <a href="https://wa.me/254701170431" class="btn btn-primary">📱 WhatsApp Us</a>
+            <a href="tel:+254701170431" class="btn btn-secondary">📞 Call Now</a>
         </div>
     </section>
 
@@ -481,26 +532,26 @@
             <h2>Dress Rentals</h2>
             <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Perfect gowns for your special moments</p>
             <div class="dress-grid">
-                <div class="dress-item">
+                <a href="https://www.instagram.com/glam_on_hire" target="_blank" class="dress-item">
                     <div class="service-icon">👰</div>
                     <h3>Wedding Dresses</h3>
                     <p>Elegant bridal gowns to make your big day unforgettable</p>
-                </div>
-                <div class="dress-item">
+                </a>
+                <a href="https://www.instagram.com/glam_on_hire" target="_blank" class="dress-item">
                     <div class="service-icon">🎂</div>
                     <h3>Birthday Shoot Dresses</h3>
                     <p>Gorgeous dresses perfect for birthday photoshoots</p>
-                </div>
-                <div class="dress-item">
+                </a>
+                <a href="https://www.instagram.com/glam_on_hire" target="_blank" class="dress-item">
                     <div class="service-icon">🤰</div>
                     <h3>Baby Bump Dresses</h3>
                     <p>Beautiful maternity gowns for your pregnancy photos</p>
-                </div>
-                <div class="dress-item">
+                </a>
+                <a href="https://www.instagram.com/glam_on_hire" target="_blank" class="dress-item">
                     <div class="service-icon">✨</div>
                     <h3>Dinner Dresses</h3>
                     <p>Stunning evening gowns for special occasions</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -651,7 +702,7 @@
             <h2>Get In Touch</h2>
             <div class="contact-info">
                 <div class="contact-item">
-                    📞 <a href="tel:0701170443">0701 170 443</a>
+                    📞 <a href="tel:+254701170431">+254 701 170 431</a>
                 </div>
                 <div class="contact-item">
                     📍 NextGEN MALL, Mombasa Road, Nairobi
@@ -663,7 +714,7 @@
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                     </svg>
                 </a>
-                <a href="https://wa.me/254701170443" target="_blank" title="WhatsApp" class="whatsapp-icon">
+                <a href="https://wa.me/254701170431" target="_blank" title="WhatsApp" class="whatsapp-icon">
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                     </svg>
@@ -689,7 +740,7 @@
             }
             
             const message = `Hi! I'd like to book: ${service}. Name: ${name}, Phone: ${phone}`;
-            const whatsappUrl = `https://wa.me/254701170443?text=${encodeURIComponent(message)}`;
+            const whatsappUrl = `https://wa.me/254701170431?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
     </script>
